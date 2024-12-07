@@ -4,8 +4,7 @@ import { Message } from './schema/message.schema';
 @Injectable()
 export class ChatService {
   async createMessageFromInbound(data: any) {
-    const { from, to, type, sendTime } = data;
-    const content = type === 'text' ? data.text.body : '';
+    const { from, to, type, content } = data;
     const direction = 'inbound';
 
     const newMessage = new Message({
@@ -15,6 +14,8 @@ export class ChatService {
       content,
       direction,
     });
+
+    // return newMessage;
 
     await newMessage.save();
     return newMessage;

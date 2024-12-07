@@ -17,8 +17,8 @@ async function testConnectionAndWrite() {
 
     // 写入一条数据
     const newDocument = new TestModel({
-      name: 'John Doe',
-      age: 33,
+      name: 'John Doe 222',
+      age: 45,
     });
 
     // 保存数据
